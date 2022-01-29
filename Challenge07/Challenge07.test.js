@@ -2,70 +2,6 @@
 
 const { objLat, cvFormatter, applicationsStatics, classesAvg } = require('./Challenge07');
 
-const first_Cv_Sample = [{
-        firstName: "Jason",
-        lastName: "James",
-        yearsOfExperience: 20,
-        tech: "JS"
-    },
-    {
-        firstName: "Aaron",
-        lastName: "William",
-        yearsOfExperience: 2,
-        tech: "JS"
-    },
-    {
-        firstName: "Shira",
-        lastName: null,
-        yearsOfExperience: 5,
-        tech: ".Net"
-    },
-    {
-        firstName: "Dimitri",
-        lastName: "Akkerman",
-        yearsOfExperience: 1,
-        tech: "Python"
-    },
-    {
-        firstName: "Isabella",
-        lastName: null,
-        yearsOfExperience: 7,
-        tech: "Java"
-    }
-]
-
-const second_Cv_Sample = [{
-        firstName: "Adele",
-        lastName: "Douglas",
-        yearsOfExperience: 7,
-        tech: ".Net"
-    },
-    {
-        firstName: "Jack",
-        lastName: "Tyler",
-        yearsOfExperience: 17,
-        tech: "Java"
-    },
-    {
-        firstName: null,
-        lastName: "Henry",
-        yearsOfExperience: 0,
-        tech: "JS"
-    },
-    {
-        firstName: "Jose",
-        lastName: "Adam",
-        yearsOfExperience: 5,
-        tech: ".Net"
-    },
-    {
-        firstName: "Victoria",
-        lastName: "Zachary",
-        yearsOfExperience: 10,
-        tech: "Python"
-    }
-]
-
 const data = {
     SchoolName: "Al Farouk",
     Capacity: 1000,
@@ -200,6 +136,70 @@ describe('Challenge07', () => {
 
 describe('Challenge07', () => {
     test('CV-Formatter', () => {
+        let first_Cv_Sample = [{
+                firstName: "Jason",
+                lastName: "James",
+                yearsOfExperience: 20,
+                tech: "JS"
+            },
+            {
+                firstName: "Aaron",
+                lastName: "William",
+                yearsOfExperience: 2,
+                tech: "JS"
+            },
+            {
+                firstName: "Shira",
+                lastName: null,
+                yearsOfExperience: 5,
+                tech: ".Net"
+            },
+            {
+                firstName: "Dimitri",
+                lastName: "Akkerman",
+                yearsOfExperience: 1,
+                tech: "Python"
+            },
+            {
+                firstName: "Isabella",
+                lastName: null,
+                yearsOfExperience: 7,
+                tech: "Java"
+            }
+        ]
+
+        let second_Cv_Sample = [{
+                firstName: "Adele",
+                lastName: "Douglas",
+                yearsOfExperience: 7,
+                tech: ".Net"
+            },
+            {
+                firstName: "Jack",
+                lastName: "Tyler",
+                yearsOfExperience: 17,
+                tech: "Java"
+            },
+            {
+                firstName: null,
+                lastName: "Henry",
+                yearsOfExperience: 0,
+                tech: "JS"
+            },
+            {
+                firstName: "Jose",
+                lastName: "Adam",
+                yearsOfExperience: 5,
+                tech: ".Net"
+            },
+            {
+                firstName: "Victoria",
+                lastName: "Zachary",
+                yearsOfExperience: 10,
+                tech: "Python"
+            }
+        ]
+
         let received = [{
                 fullName: "Jason James",
                 tech: "JS"
@@ -251,7 +251,7 @@ describe('Challenge07', () => {
             dotNet_Devs: 1,
             java_Devs: 1,
             totalApplicants: 5,
-            rejectedApplicants: 2,
+            rejectedApplicants: 1,
         }
 
         let received2 = {
@@ -262,6 +262,71 @@ describe('Challenge07', () => {
             totalApplicants: 5,
             rejectedApplicants: 1,
         }
+
+        let first_Cv_Sample = [{
+                firstName: "Jason",
+                lastName: "James",
+                yearsOfExperience: 20,
+                tech: "JS"
+            },
+            {
+                firstName: "Aaron",
+                lastName: "William",
+                yearsOfExperience: 2,
+                tech: "JS"
+            },
+            {
+                firstName: "Shira",
+                lastName: null,
+                yearsOfExperience: 5,
+                tech: ".Net"
+            },
+            {
+                firstName: "Dimitri",
+                lastName: "Akkerman",
+                yearsOfExperience: 1,
+                tech: "Python"
+            },
+            {
+                firstName: "Isabella",
+                lastName: null,
+                yearsOfExperience: 7,
+                tech: "Java"
+            }
+        ]
+
+        let second_Cv_Sample = [{
+                firstName: "Adele",
+                lastName: "Douglas",
+                yearsOfExperience: 7,
+                tech: ".Net"
+            },
+            {
+                firstName: "Jack",
+                lastName: "Tyler",
+                yearsOfExperience: 17,
+                tech: "Java"
+            },
+            {
+                firstName: null,
+                lastName: "Henry",
+                yearsOfExperience: 0,
+                tech: "JS"
+            },
+            {
+                firstName: "Jose",
+                lastName: "Adam",
+                yearsOfExperience: 5,
+                tech: ".Net"
+            },
+            {
+                firstName: "Victoria",
+                lastName: "Zachary",
+                yearsOfExperience: 10,
+                tech: "Python"
+            }
+        ]
+
         expect(applicationsStatics(first_Cv_Sample)).toStrictEqual(received);
         expect(applicationsStatics(second_Cv_Sample)).toStrictEqual(received2);
     })
