@@ -27,7 +27,12 @@
 // -------------------------------------------------------------------------------------------------------
 
 const customerAndAge = (obj) => {
-    // write your code here
+    let arr = [];
+    for (const properety in obj)
+        arr.push(`Customer Name :${properety} , Age :${obj[properety]}`)
+
+    return arr;
+
 };
 
 // -------------------------------------------------------------------------------------------------------
@@ -54,7 +59,11 @@ const customerAndAge = (obj) => {
 // -------------------------------------------------------------------------------------------------------
 
 const getEntries = (obj) => {
-    // write your code here
+    let arr = [];
+    for (const [key, value] of Object.entries(obj)) {
+        arr.push(`${key}: ${value}`);
+    }
+    return arr;
 };
 
 // -------------------------------------------------------------------------------------------------------
@@ -94,8 +103,11 @@ const courses = [{
 const getInfo = (arr) => {
     let coursesName = [];
     let studentsName = [];
-    // write your code here
-
+    for (const element of arr) {
+        coursesName.push(`${element.course}`);
+        for (const name of element.Students)
+            studentsName.push(`${name}`)
+    }
     return { coursesName, studentsName };
 };
 
@@ -118,7 +130,21 @@ const getInfo = (arr) => {
 //  ------------------------------------------------------------------------------------------------------
 
 const getStudents = (arr) => {
-    // write your code here
+    let arr1 = [];
+    for (const element of arr) {
+        for (const co of courses)
+            for (const name of co.Students)
+                if (element == name) {
+                    arr1.push({
+                        Student: `${element}`,
+                        course: `${co.course}`
+                    })
+
+                }
+
+    }
+    return arr1;
+
 
 };
 
